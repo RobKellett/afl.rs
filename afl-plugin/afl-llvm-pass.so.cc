@@ -110,7 +110,7 @@ bool AFLCoverage::runOnModule(Module &M) {
       BasicBlock::iterator IP = BB.getFirstInsertionPt();
       IRBuilder<> IRB(&(*IP));
 
-      if ((random() % 100) >= inst_ratio) continue;
+      if ((unsigned int)(random() % 100) >= inst_ratio) continue;
 
       /* Make up cur_loc */
 
